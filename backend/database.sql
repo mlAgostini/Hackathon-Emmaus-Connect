@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `emmaus_connect_db`.`user` (
   `Lastname` VARCHAR(100) NOT NULL,
   `IsAdmmin` TINYINT(1) NOT NULL,
   `Region` VARCHAR(100) NOT NULL,
+  `Password` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -40,12 +41,13 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `emmaus_connect_db`.`model` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `Model_name` VARCHAR(100) NOT NULL,
+  `Brand` VARCHAR(50) NOT NULL,
+  `Model_name` VARCHAR(50) NOT NULL,
   `RAM` INT NOT NULL,
   `Memory` INT NOT NULL,
   `Buy_price` INT NULL DEFAULT NULL,
   `Sell_Price` INT NULL DEFAULT NULL,
-  `Condition` VARCHAR(100) NOT NULL,
+  `Condition` VARCHAR(50) NOT NULL,
   `Other` VARCHAR(500) NULL DEFAULT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`id`, `user_id`),
@@ -61,14 +63,14 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `emmaus_connect_db`.`in_stock`
+-- Table `emmaus_connect_db`.`stock`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `emmaus_connect_db`.`in_stock` (
+CREATE TABLE IF NOT EXISTS `emmaus_connect_db`.`stock` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `model_id` INT NOT NULL,
   PRIMARY KEY (`id`, `model_id`),
-  INDEX `fk_in_stock_model1_idx` (`model_id` ASC) VISIBLE,
-  CONSTRAINT `fk_in_stock_model1`
+  INDEX `fk_stock_model1_idx` (`model_id` ASC) VISIBLE,
+  CONSTRAINT `fk_stock_model1`
     FOREIGN KEY (`model_id`)
     REFERENCES `emmaus_connect_db`.`model` (`id`)
     ON DELETE NO ACTION
