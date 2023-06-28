@@ -1,0 +1,53 @@
+@import "../../App.scss";
+
+.container-login {
+  font-family: $font-title;
+  background-color: $yellow;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8%;
+  margin: 10%;
+
+  .title-connexion {
+    font-size: x-large;
+    margin-bottom: 15%;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input-identification {
+      margin-bottom: 10%;
+
+      input {
+        border: 0;
+        width: 90%;
+        background-color: $white;
+        border-radius: 8px;
+        padding: 5%;
+      }
+    }
+
+    .input-password {
+      margin-bottom: 10%;
+      input {
+        border: 0;
+        width: 90%;
+        background-color: $white;
+        border-radius: 8px;
+        padding: 5%;
+      }
+    }
+  }
+}
+button {
+  border: 0;
+  padding: 4%;
+  border-radius: 8px;
+  background-color: $blue;
+  color: $white;
+}

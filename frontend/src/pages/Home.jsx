@@ -1,7 +1,9 @@
+import LoginHome from "../components/login-home/LoginHome";
+
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <LoginHome />
     </div>
   );
 }
