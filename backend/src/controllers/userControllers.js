@@ -13,10 +13,10 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  const { account_id } = req.query;
+  //   const { account_id } = req.query;
 
   models.user
-    .findAccountId(account_id)
+    .find(req.params.id)
     .then(([result]) => {
       res.send(result);
     })
