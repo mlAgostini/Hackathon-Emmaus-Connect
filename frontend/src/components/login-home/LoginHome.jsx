@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "./LoginHome.scss";
 
 export default function LoginHome() {
+  const navigate = useNavigate();
+
+  const redirection = () => {
+    navigate("/informations");
+  };
+
   return (
     <div className="container-login">
       <div className="title-connexion">
@@ -23,7 +30,9 @@ export default function LoginHome() {
             />
           </div>
 
-          <button type="submit">Valider</button>
+          <button type="submit" onClick={redirection}>
+            Valider
+          </button>
         </form>
       </div>
     </div>

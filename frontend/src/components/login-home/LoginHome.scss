@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   margin: 10%;
+  padding: 10%;
   background-color: $yellow;
   box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.29);
   border-radius: 8px;
@@ -13,6 +14,7 @@
   @include desktop {
     margin: 5% 40% 0 40%;
     padding: 2%;
+
     .input-connexion {
       width: 90%;
     }
@@ -41,12 +43,13 @@
 
       input {
         border: 0;
-        width: 102%;
+        width: 90%;
         background-color: $white;
         border-radius: 8px;
         padding: 5%;
 
         @include desktop {
+          width: 102%;
         }
       }
     }
@@ -56,17 +59,20 @@
 
       input {
         border: 0;
-        width: 102%;
+        width: 90%;
         background-color: $white;
         border-radius: 8px;
         padding: 5%;
+
+        @include desktop {
+          width: 102%;
+        }
       }
     }
   }
 }
 
 button {
-  margin-left: 10%;
   padding: 6%;
   width: 40%;
   border: 0;
@@ -74,9 +80,14 @@ button {
   background-color: $blue;
   color: $white;
   box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.29);
+
+  @include desktop {
+    margin-left: 10%;
+  }
 }
 
 button:hover {
   background-color: $white;
   color: $blue;
+  transition: all 0.4s;
 }
