@@ -37,7 +37,6 @@ function SlideInformation() {
         console.error(err);
       });
   };
-
   // handle Click Information
   const handleClickInformation = (evt) => {
     setInformation({
@@ -45,7 +44,17 @@ function SlideInformation() {
       [evt.target.name]: evt.target.value,
     });
   };
+  // function change style Onclick
+  const [style, setStyle] = useState("buttonNoClick");
 
+  const changeStyleButtonClick = () => {
+    setStyle("buttonClick");
+  };
+  // Handle Click Global
+  const handleClickGlobal = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClick();
+  };
   // handle Change Information textarea
   const handleChangeInformation = (evt) => {
     setInformation({
@@ -74,56 +83,56 @@ function SlideInformation() {
           <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              className="btn-brand"
+              className={style}
               id="btn-samsung"
               value="samsung"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
               type="button"
             >
               <span>Samsung</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-huawei"
               type="button"
               value="huawei"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Huawei</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-honor"
               type="button"
               value="Honor"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Honor</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-xiaomi"
               type="button"
               value="Xiaomi"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Xiaomi</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-oneplus"
               type="button"
               value="OnePlus"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>OnePlus</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-motorola"
               type="button"
               value="Motorola"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Motorola</span>
             </button>

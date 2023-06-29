@@ -1,28 +1,35 @@
 @import "../../App.scss";
+@keyframes myAnim {
+  0% {
+    transform: scale(1);
+  }
 
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 #btn-samsung {
   background: url("../../assets/images/samsung.png") no-repeat;
-  background-size: contain;
+  background-size: 101%;
 }
 #btn-huawei {
   background: url("../../assets/images/huaweii.png") no-repeat, #fff;
-  background-size: contain;
 }
 #btn-honor {
   background: url("../../assets/images/honor.png") no-repeat;
-  background-size: contain;
 }
 #btn-xiaomi {
   background: url("../../assets/images/xiaomi.png") no-repeat;
-  background-size: contain;
 }
 #btn-oneplus {
   background: url("../../assets/images/oneplus.png") no-repeat;
-  background-size: contain;
 }
 #btn-motorola {
   background: url("../../assets/images/motorola.png") no-repeat;
-  background-size: contain;
 }
 #btn-state-green {
   background: url("../../assets/images/backbroungVert.png") no-repeat;
@@ -63,7 +70,12 @@
   justify-content: center;
 }
 
-.btn-brand {
+#btn-samsung,
+#btn-huawei,
+#btn-honor,
+#btn-xiaomi,
+#btn-oneplus,
+#btn-motorola {
   display: inline-block;
   padding: 0 0 0 0px;
   height: 100px;
@@ -73,8 +85,17 @@
   border-radius: 10px;
   border: none;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+  background-size: contain;
 }
-.btn-brand span {
+.buttonNoClick:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+#btn-samsung span,
+#btn-huawei span,
+#btn-honor span,
+#btn-xiaomi span,
+#btn-oneplus span,
+#btn-motorola span {
   color: $blue;
   font-family: $font-title;
   text-decoration: underline;
@@ -105,8 +126,8 @@
 .btn-state1 {
   display: inline-block;
   padding: 0 0 0 0px;
-  height: 100px;
-  width: 150px;
+  height: 110px;
+  width: 170px;
   border: none;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
   margin: 1%;
@@ -115,13 +136,20 @@
 .btn-state {
   display: inline-block;
   padding: 0 0 0 0px;
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   border: none;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
   margin: 1%;
   border-radius: 10px;
 }
+.btn-state:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+.btn-state1:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+
 .content-state {
   display: flex;
   flex-wrap: wrap;
@@ -134,8 +162,7 @@
 
 .btn-state span,
 .btn-state1 span {
-  color: $white;
-  text-shadow: rgb(83, 83, 83) 1px 1px 2px;
+  color: $blue;
   font-family: $font-title;
   font-size: 20px;
   margin-top: 76px;
@@ -152,10 +179,72 @@
 }
 .content-ram {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-ram {
   width: 100px;
   height: 50px;
   margin: 2%;
+  font-family: $font-title;
+  background-color: $red;
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  font-size: 20px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+}
+.btn-ram:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+.content-stockage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn-stock {
+  width: 100px;
+  height: 50px;
+  margin: 2%;
+  font-family: $font-title;
+  background-color: $yellow;
+  border: none;
+  border-radius: 10px;
+  color: $blue;
+  font-size: 20px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+}
+.btn-stock:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+.button-submit-information {
+  width: 150px;
+  height: 60px;
+  font-family: $font-big-title;
+  background-color: $yellow;
+  border: none;
+  border-radius: 10px;
+  color: $blue;
+  font-size: 38px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin: 9% auto 5% auto;
+}
+.button-submit-information:hover {
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+.buttonClick {
+  border: solid black 1px;
+  box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.75) inset !important;
+}
+.buttonClick span {
+  color: $blue;
+  font-family: $font-title;
+  text-decoration: underline;
+  font-size: 16px;
+  margin-top: 110%;
+  display: block;
 }
