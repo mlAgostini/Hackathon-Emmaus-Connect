@@ -26,7 +26,7 @@ function Navbar() {
     <div className="navHeader">
       <BurgerMenu />
       <img className="logoImg" src={LogoEmmaus} alt="Logo Emmaus" />
-      <Link to="/informations">Enregistrer un téléphone</Link>
+      <Link to="/information">Enregistrer un téléphone</Link>
       <Link to="/stockage">Voir les stocks disponibles</Link>
       <button type="button" className="logoutBtn" onClick={handleLogingLogout}>
         Se déconnecter
