@@ -9,17 +9,19 @@ function SlideInformation() {
     Model_name: "",
     RAM: "",
     Memory: "",
-    Sell_Price: "",
-    Condition: "",
+    Device_condition: "",
     Other: "",
-    user_id: "",
+    user_id: 1,
   });
+  // console.log(
+  //   "🚀 ~ file: SlideInformation.jsx:16 ~ SlideInformation ~ information:",
+  //   information
+  // );
 
   // useState user
   const [user, setUser] = useState({
     Firstname: "",
     Lastname: "",
-    IsAdmin: "",
     Region: "",
   });
 
@@ -37,11 +39,20 @@ function SlideInformation() {
         console.error(err);
       });
   };
+
   // handle Click Information
   const handleClickInformation = (evt) => {
+    setInformation((previousInfo) => ({
+      ...previousInfo,
+      [evt.target.name]: evt.target.value,
+    }));
+  };
+
+  // handle Change Information textarea
+  const handleChangeInformation = (evt) => {
     setInformation({
       ...information,
-      [evt.target.name]: evt.target.value,
+      Other: evt.target.value,
     });
   };
   // function change style Onclick
@@ -85,9 +96,13 @@ function SlideInformation() {
             <button
               className={style}
               id="btn-samsung"
-              value="samsung"
-              onClick={handleClickGlobal}
               type="button"
+              value="samsung"
+              name="Brand"
+              onClick={(evt) => {
+                handleClickInformation(evt);
+              }}
+        
             >
               <span>Samsung</span>
             </button>
@@ -96,7 +111,9 @@ function SlideInformation() {
               id="btn-huawei"
               type="button"
               value="huawei"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
+
             >
               <span>Huawei</span>
             </button>
@@ -105,7 +122,9 @@ function SlideInformation() {
               id="btn-honor"
               type="button"
               value="Honor"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
+
             >
               <span>Honor</span>
             </button>
@@ -114,16 +133,20 @@ function SlideInformation() {
               id="btn-xiaomi"
               type="button"
               value="Xiaomi"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <span>Xiaomi</span>
             </button>
             <button
+
               className="buttonNoClick"
               id="btn-oneplus"
               type="button"
               value="OnePlus"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
+
             >
               <span>OnePlus</span>
             </button>
@@ -132,7 +155,9 @@ function SlideInformation() {
               id="btn-motorola"
               type="button"
               value="Motorola"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
+
             >
               <span>Motorola</span>
             </button>
@@ -140,9 +165,17 @@ function SlideInformation() {
           <h2 className="title-slide">MODELE</h2>
           <div className="content-model">
             <label htmlFor="modele">CHOISISSEZ LE MODELE</label>
-            <select name="model" id="modelChoice">
-              <option value="samsunggalaxys9">--</option>
-              <option value="samsunggalaxys9"> SAMSUNG GALAXY S9</option>
+            <select
+              value={information.Model_name}
+              name="Model_name"
+              id="Model_name"
+              onChange={(e) =>
+                setInformation({ ...information, Model_name: e.target.value })
+              }
+            >
+              <option value="">--</option>
+              <option value="samsunggalaxys9">SAMSUNG GALAXY S9</option>
+
               <option value="samsungs10plus">SAMSUNG GALAXY S10+</option>
               <option value="samsungnote8">SAMSUNG GALAXY NOTE 8</option>
               <option value="samsungzflip4">SAMSUNG GALAXY Z FLIP 4</option>
@@ -156,6 +189,8 @@ function SlideInformation() {
               id="btn-state-green"
               className="btn-state1"
               type="button"
+              value="reconditionné"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Reconditionné</span>
@@ -164,7 +199,10 @@ function SlideInformation() {
               id="btn-state-yellow"
               className="btn-state1"
               type="button"
-              value="Reconditionné"
+
+              value="Reconditionnable"
+              name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Reconditionnable</span>
@@ -174,6 +212,8 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Bloqué"
+              name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Bloqué</span>
@@ -183,6 +223,8 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Réparable"
+              name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Réparable</span>
@@ -192,6 +234,8 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Fin de Vie"
+              name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Fin de Vie</span>
@@ -216,6 +260,8 @@ function SlideInformation() {
         <div className="content-ram">
           <button
             className="btn-ram"
+            value="2"
+            name="RAM"
             onClick={handleClickInformation}
             type="button"
           >
@@ -224,6 +270,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="4"
+            name="RAM"
             onClick={handleClickInformation}
           >
             4 GO
@@ -231,6 +279,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="6"
+            name="RAM"
             onClick={handleClickInformation}
           >
             6 GO
@@ -238,6 +288,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="8"
+            name="RAM"
             onClick={handleClickInformation}
           >
             8GO
@@ -245,6 +297,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="12"
+            name="RAM"
             onClick={handleClickInformation}
           >
             12 GO
@@ -252,6 +306,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="16"
+            name="RAM"
             onClick={handleClickInformation}
           >
             16 GO
@@ -262,6 +318,8 @@ function SlideInformation() {
         <div className="content-stockage">
           <button
             className="btn-stock"
+            value="16"
+            name="Memory"
             onClick={handleClickInformation}
             type="button"
           >
@@ -270,6 +328,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="32"
+            name="Memory"
             onClick={handleClickInformation}
           >
             32 GO
@@ -277,6 +337,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="64"
+            name="Memory"
             onClick={handleClickInformation}
           >
             64 GO
@@ -284,6 +346,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="128"
+            name="Memory"
             onClick={handleClickInformation}
           >
             128 GO
@@ -291,6 +355,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="256"
+            name="Memory"
             onClick={handleClickInformation}
           >
             256 GO
@@ -298,6 +364,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="+512"
+            name="Memory"
             onClick={handleClickInformation}
           >
             +512 GO
@@ -313,3 +381,193 @@ function SlideInformation() {
 }
 
 export default SlideInformation;
+
+/*
+import "./styles.css";
+import React, { useState } from "react";
+
+export default function App() {
+  const [brand, setBrand] = useState("");
+  const [ram, setRam] = useState("");
+  const [memory, setMemory] = useState("");
+  const [condition, setCondition] = useState("");
+  const [sellingPrice, setSellingPrice] = useState(0);
+  let Val_M = 0;
+  let Val_S = 0;
+  let solde = 0;
+
+  const categories = [
+    { min: -Infinity, max: 90, name: "1 - HC" },
+    { min: 90, max: 165, name: "2 - C" },
+    { min: 165, max: 255, name: "3 - B" },
+    { min: 255, max: 375, name: "4 - A" },
+    { min: 375, max: Infinity, name: "5 - Premium" }
+  ];
+
+  const calculPrice = () => {
+    // Calculate RAM
+    switch (ram) {
+      case "1":
+        Val_M = 30;
+        break;
+      case "2":
+        Val_M = 32;
+        break;
+      case "3":
+        Val_M = 54;
+        break;
+      case "4":
+        Val_M = 60;
+        break;
+      case "6":
+        Val_M = 70;
+        break;
+      case "8":
+        Val_M = 75;
+        break;
+      case "12":
+        Val_M = 80;
+        break;
+      default:
+        Val_M = 0;
+        break;
+    }
+
+    // Calculate memory
+    switch (memory) {
+      case "31":
+        Val_S = 31;
+        break;
+      case "32":
+        Val_S = 45;
+        break;
+      case "64":
+        Val_S = 66;
+        break;
+      case "128":
+        Val_S = 70;
+        break;
+      case "256":
+        Val_S = 78;
+        break;
+      case "512":
+        Val_S = 88;
+        break;
+      case "1000":
+        Val_S = 100;
+        break;
+      default:
+        Val_S = 0;
+        break;
+    }
+
+    // Calculate solde
+    switch (condition) {
+      case "DEEE":
+        solde = -80;
+        break;
+      case "reparable":
+        solde = -30;
+        break;
+      case "bloque":
+        solde = -10;
+        break;
+      case "reconditionable":
+        solde = -5;
+        break;
+      case "reconditionne":
+        solde = 0;
+        break;
+      case "comme-neuf":
+        solde = 50;
+        break;
+      default:
+        solde = 0;
+        break;
+    }
+
+    // Calculate initial price
+    let initialPrice = Val_M + Val_S + solde;
+    let sellingPrice = initialPrice >= 0 ? initialPrice : 0;
+
+    setSellingPrice(sellingPrice);
+    console.log(sellingPrice);
+    for (var i = 0; i < categories.length; i++) {
+      if (
+        sellingPrice >= categories[i].min &&
+        sellingPrice < categories[i].max
+      ) {
+        console.log(categories[i].name);
+      }
+    }
+  };
+
+  return (
+    <div className="calculator">
+      <div>
+        <label htmlFor="pet-select">Marque</label>
+        <select
+          name="etats"
+          value={brand}
+          onChange={(e) => setBrand(e.target.value)}
+          id="L'état du smartphone"
+        >
+          <option value="">--Please choose an option--</option>
+          <option value="Apple">Apple</option>
+          <option value="Oppo">Oppo</option>
+          <option value="Oneplus">OnePlus</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Huawei">Huawei</option>
+        </select>
+      </div>
+      <label htmlFor="name">RAM :</label>
+      <input
+        type="text"
+        id="ram"
+        required
+        minLength="4"
+        maxLength="8"
+        size="10"
+        value={ram}
+        onChange={(e) => setRam(e.target.value)}
+      ></input>
+      <div>
+        <label htmlFor="memory">Stockage :</label>
+        <input
+          type="text"
+          id="memory"
+          name="ram"
+          required
+          minLength="4"
+          maxLength="8"
+          size="10"
+          value={memory}
+          onChange={(e) => setMemory(e.target.value)}
+        ></input>
+      </div>
+      <div></div>
+      <label htmlFor="pet-select">L'état du smartphone</label>
+      <select
+        name="etats"
+        id="L'état du smartphone"
+        value={condition}
+        onChange={(e) => setCondition(e.target.value)}
+      >
+        <option value="">--Please choose an option--</option>
+        <option value="DEEE">DEEE</option>
+        <option value="reparable">Reparable</option>
+        <option value="bloque">Bloqué</option>
+        <option value="reconditionable">Reconditionable</option>
+        <option value="reconditionne">Reconditionné</option>
+        <option value="comme-neuf">Comme neuf</option>
+      </select>
+
+      <div>
+        <button onClick={calculPrice}>Click to see price</button>
+
+        <span> {sellingPrice} </span>
+      </div>
+    </div>
+  );
+}
+*/
