@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useContext } from "react";
 import { LogingContext } from "../../contexts/LogingContext";
 import BurgerBtn from "../../assets/images/logoMenuBurger.png";
+import "./BurgerMenu.scss";
 
 function BurgerMenu() {
   const navigating = useNavigate();
@@ -22,11 +23,11 @@ function BurgerMenu() {
   };
   const defaultStyle = {
     bmBurgerButton: {
-      width: "100%",
-      height: "auto",
+      width: "10vw",
+      height: "5vh",
     },
     bmCrossButton: {
-      height: "24px",
+      height: "2px",
       width: "24px",
     },
     bmCross: {
