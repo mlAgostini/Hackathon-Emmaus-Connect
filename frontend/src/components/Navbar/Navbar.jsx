@@ -29,7 +29,7 @@ function Navbar() {
   if (matchMobile)
     return (
       <div className="navHeader">
-        <img src={LogoEmmaus} alt="Logo Emmaus" />
+        <img className="logoImgMobile" src={LogoEmmaus} alt="Logo Emmaus" />
         <div className="navBurger">
           <BurgerMenu />
         </div>
@@ -40,15 +40,19 @@ function Navbar() {
     return (
       <div className="navHeaderPC">
         <img className="logoImg" src={LogoEmmaus} alt="Logo Emmaus" />
-        <Link to="/informations">Enregistrer un téléphone</Link>
-        <Link to="/stockage">Voir les stocks disponibles</Link>
-        <button
-          type="button"
-          className="logoutBtn"
-          onClick={handleLogingLogout}
-        >
-          Se déconnecter
-        </button>
+        <div className="container-links">
+          <div className="link-information">
+            <Link to="/informations">Enregistrer un téléphone</Link>
+          </div>
+          <div className="link-stockage">
+            <Link to="/stockage">Voir les stocks disponibles</Link>
+          </div>
+          <div className="link-deconnexion">
+            <Link to="/" onClick={handleLogingLogout}>
+              Déconnexion
+            </Link>
+          </div>
+        </div>
       </div>
     );
 }
