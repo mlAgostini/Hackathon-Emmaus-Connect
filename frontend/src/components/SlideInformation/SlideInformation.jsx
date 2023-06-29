@@ -9,14 +9,10 @@ function SlideInformation() {
     Model_name: "",
     RAM: "",
     Memory: "",
-    Device_condition: "",
+    Device_condition: "Comme neuf",
     Other: "",
     user_id: 1,
   });
-  // console.log(
-  //   "🚀 ~ file: SlideInformation.jsx:16 ~ SlideInformation ~ information:",
-  //   information
-  // );
 
   // useState user
   const [user, setUser] = useState({
@@ -56,16 +52,16 @@ function SlideInformation() {
     });
   };
   // function change style Onclick
-  // const [style, setStyle] = useState("buttonNoClick");
+  const [style, setStyle] = useState("buttonNoClick");
 
-  // const changeStyleButtonClick = () => {
-  //   setStyle("buttonClick");
-  // };
+  const changeStyleButtonClick = () => {
+    setStyle("buttonClick");
+  };
   // Handle Click Global
-  // const handleClickGlobal = (evt) => {
-  //   handleClickInformation(evt);
-  //   changeStyleButtonClick();
-  // };
+  const handleClickGlobal = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClick();
+  };
 
   // handle Submit Information formulaire
   const handleSubmitInformation = (evt) => {
@@ -87,13 +83,13 @@ function SlideInformation() {
           <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              // className={style}
+              className={style}
               id="btn-samsung"
               type="button"
               value="samsung"
               name="Brand"
               onClick={(evt) => {
-                handleClickInformation(evt);
+                handleClickGlobal(evt);
               }}
             >
               <a
@@ -110,7 +106,7 @@ function SlideInformation() {
               type="button"
               value="huawei"
               name="Brand"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <a
                 href="https://consumer.huawei.com/fr/phones/"
@@ -126,7 +122,7 @@ function SlideInformation() {
               type="button"
               value="Honor"
               name="Brand"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <a
                 href="https://www.hihonor.com/fr/"
@@ -142,7 +138,7 @@ function SlideInformation() {
               type="button"
               value="Xiaomi"
               name="Brand"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Xiaomi</span>
             </button>
@@ -152,7 +148,7 @@ function SlideInformation() {
               type="button"
               value="OnePlus"
               name="Brand"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>OnePlus</span>
             </button>
@@ -162,7 +158,7 @@ function SlideInformation() {
               type="button"
               value="Motorola"
               name="Brand"
-              onClick={handleClickInformation}
+              onClick={handleClickGlobal}
             >
               <span>Motorola</span>
             </button>
@@ -196,7 +192,7 @@ function SlideInformation() {
               type="button"
               value="reconditionné"
               name="Device_condition"
-              onClick={handleClickInformation}
+              onClick={changeStyleButtonClick}
             >
               <span>Reconditionné</span>
             </button>
@@ -206,7 +202,7 @@ function SlideInformation() {
               type="button"
               value="Reconditionnable"
               name="Device_condition"
-              onClick={handleClickInformation}
+              onClick={changeStyleButtonClick}
             >
               <span>Reconditionnable</span>
             </button>
@@ -216,7 +212,7 @@ function SlideInformation() {
               type="button"
               value="Bloqué"
               name="Device_condition"
-              onClick={handleClickInformation}
+              onClick={changeStyleButtonClick}
             >
               <span>Bloqué</span>
             </button>
@@ -226,7 +222,7 @@ function SlideInformation() {
               type="button"
               value="Réparable"
               name="Device_condition"
-              onClick={handleClickInformation}
+              onClick={changeStyleButtonClick}
             >
               <span>Réparable</span>
             </button>
@@ -236,7 +232,7 @@ function SlideInformation() {
               type="button"
               value="Fin de Vie"
               name="Device_condition"
-              onClick={handleClickInformation}
+              onClick={changeStyleButtonClick}
             >
               <span>Fin de Vie</span>
             </button>
@@ -262,7 +258,7 @@ function SlideInformation() {
             className="btn-ram"
             value="2"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
             type="button"
           >
             2 GO
@@ -272,7 +268,7 @@ function SlideInformation() {
             type="button"
             value="4"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             4 GO
           </button>
@@ -281,7 +277,7 @@ function SlideInformation() {
             type="button"
             value="6"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             6 GO
           </button>
@@ -290,7 +286,7 @@ function SlideInformation() {
             type="button"
             value="8"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             8GO
           </button>
@@ -299,7 +295,7 @@ function SlideInformation() {
             type="button"
             value="12"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             12 GO
           </button>
@@ -308,7 +304,7 @@ function SlideInformation() {
             type="button"
             value="16"
             name="RAM"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             16 GO
           </button>
@@ -320,7 +316,7 @@ function SlideInformation() {
             className="btn-stock"
             value="16"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
             type="button"
           >
             16 GO
@@ -330,7 +326,7 @@ function SlideInformation() {
             type="button"
             value="32"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             32 GO
           </button>
@@ -339,7 +335,7 @@ function SlideInformation() {
             type="button"
             value="64"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             64 GO
           </button>
@@ -348,7 +344,7 @@ function SlideInformation() {
             type="button"
             value="128"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             128 GO
           </button>
@@ -357,7 +353,7 @@ function SlideInformation() {
             type="button"
             value="256"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             256 GO
           </button>
@@ -366,7 +362,7 @@ function SlideInformation() {
             type="button"
             value="+512"
             name="Memory"
-            onClick={handleClickInformation}
+            onClick={handleClickGlobal}
           >
             +512 GO
           </button>
