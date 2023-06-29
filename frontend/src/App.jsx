@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 
 import Information from "./pages/information/Information";
 import Stockage from "./pages/stockage/Stockage";
-import "./App.scss";
+import "./app.scss";
 
 import Navbar from "./components/Navbar/Navbar";
 import { LogingProvider } from "./contexts/LogingContext";
@@ -12,17 +12,17 @@ function App() {
   return (
     <Router>
       <div className="background-wrapper">
-        <div className="homeHeader">
-          <LogingProvider>
+        <LogingProvider>
+          <div className="homeHeader">
             <Navbar />
-          </LogingProvider>
-        </div>
+          </div>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/information" element={<Information />} />
-          <Route path="/stockage" element={<Stockage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/information" element={<Information />} />
+            <Route path="/stockage" element={<Stockage />} />
+          </Routes>
+        </LogingProvider>
       </div>
     </Router>
   );

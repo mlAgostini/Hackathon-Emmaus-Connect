@@ -171,4 +171,7 @@ $width-desktop: 850px;
   bottom: 0;
   right: 0;
   z-index: -1;
+  @include mobile {
+    background-image: none;
+  }
 }

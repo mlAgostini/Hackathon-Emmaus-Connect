@@ -9,7 +9,7 @@ function SlideInformation() {
     Model_name: "",
     RAM: "",
     Memory: "",
-    Device_condition: "Comme neuf",
+    Device_condition: "Reconditionné",
     Other: "",
     user_id: 1,
   });

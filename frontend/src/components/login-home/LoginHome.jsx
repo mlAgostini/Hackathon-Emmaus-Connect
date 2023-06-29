@@ -1,11 +1,19 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LogingContext } from "../../contexts/LogingContext";
 import "./LoginHome.scss";
 
 export default function LoginHome() {
   const navigate = useNavigate();
+  const { loging } = useContext(LogingContext);
 
   const redirection = () => {
-    navigate("/informations");
+    navigate("/information");
+  };
+
+  const validate = () => {
+    loging();
+    redirection();
   };
 
   return (
@@ -30,7 +38,7 @@ export default function LoginHome() {
             />
           </div>
 
-          <button type="submit" onClick={redirection}>
+          <button type="submit" onClick={validate}>
             Valider
           </button>
         </form>
