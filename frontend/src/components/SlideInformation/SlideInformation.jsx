@@ -1,6 +1,6 @@
 import axios from "axios";
 import "./SlideInformation.scss";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function SlideInformation() {
   // useState info
@@ -37,12 +37,29 @@ function SlideInformation() {
         console.error(err);
       });
   };
-
-  // handle Change Information
+  // handle Click Information
   const handleClickInformation = (evt) => {
     setInformation({
       ...information,
       [evt.target.name]: evt.target.value,
+    });
+  };
+  // function change style Onclick
+  const [style, setStyle] = useState("buttonNoClick");
+
+  const changeStyleButtonClick = () => {
+    setStyle("buttonClick");
+  };
+  // Handle Click Global
+  const handleClickGlobal = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClick();
+  };
+  // handle Change Information textarea
+  const handleChangeInformation = (evt) => {
+    setInformation({
+      ...information,
+      Other: evt.target.value,
     });
   };
 
@@ -63,55 +80,68 @@ function SlideInformation() {
     <div>
       <form className="form-information" onSubmit={handleSubmitInformation}>
         <div className="contenair-brand">
-          <h2 className="title-brand">MARQUE</h2>
+          <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              className="btn-samsung"
-              onClick={handleClickInformation}
+              className={style}
+              id="btn-samsung"
+              value="samsung"
+              onClick={handleClickGlobal}
               type="button"
             >
-              Samsung
+              <span>Samsung</span>
             </button>
             <button
-              className="btn-huawei"
+              className="buttonNoClick"
+              id="btn-huawei"
               type="button"
-              onClick={handleClickInformation}
+              value="huawei"
+              onClick={handleClickGlobal}
             >
-              Huawei
+              <span>Huawei</span>
             </button>
             <button
-              className="btn-honor"
+              className="buttonNoClick"
+              id="btn-honor"
               type="button"
-              onClick={handleClickInformation}
+              value="Honor"
+              onClick={handleClickGlobal}
             >
-              Honor
+              <span>Honor</span>
             </button>
             <button
-              className="btn-xiaomi"
+              className="buttonNoClick"
+              id="btn-xiaomi"
               type="button"
-              onClick={handleClickInformation}
+              value="Xiaomi"
+              onClick={handleClickGlobal}
             >
-              Xiaomi
+              <span>Xiaomi</span>
             </button>
             <button
-              className="btn-oneplus"
+              className="buttonNoClick"
+              id="btn-oneplus"
               type="button"
-              onClick={handleClickInformation}
+              value="OnePlus"
+              onClick={handleClickGlobal}
             >
-              OnePlus
+              <span>OnePlus</span>
             </button>
             <button
-              className="btn-motorola"
+              className="buttonNoClick"
+              id="btn-motorola"
               type="button"
-              onClick={handleClickInformation}
+              value="Motorola"
+              onClick={handleClickGlobal}
             >
-              Motorola
+              <span>Motorola</span>
             </button>
           </div>
-          <h2 className="title-model">MODELE</h2>
+          <h2 className="title-slide">MODELE</h2>
           <div className="content-model">
             <label htmlFor="modele">CHOISISSEZ LE MODELE</label>
             <select name="model" id="modelChoice">
+              <option value="samsunggalaxys9">--</option>
               <option value="samsunggalaxys9"> SAMSUNG GALAXY S9</option>
               <option value="samsungs10plus">SAMSUNG GALAXY S10+</option>
               <option value="samsungnote8">SAMSUNG GALAXY NOTE 8</option>
@@ -120,69 +150,69 @@ function SlideInformation() {
               <option value="samsungA40"> SAMSUNG A40</option>
             </select>
           </div>
-          <h2 className="title-brand">MARQUE</h2>
+          <h2 className="title-slide">ETAT</h2>
           <div className="content-state">
             <button
-              className="btn-state-green"
+              id="btn-state-green"
+              className="btn-state1"
               type="button"
               onClick={handleClickInformation}
             >
-              Reconditionné
+              <span>Reconditionné</span>
             </button>
             <button
-              className="btn-state-yellow"
+              id="btn-state-yellow"
+              className="btn-state1"
               type="button"
+              value="Reconditionné"
               onClick={handleClickInformation}
             >
-              Reconditionnable
+              <span>Reconditionnable</span>
             </button>
             <button
-              className="btn-state-orange"
+              id="btn-state-orange"
+              className="btn-state"
               type="button"
+              value="Bloqué"
               onClick={handleClickInformation}
             >
-              Bloqué
+              <span>Bloqué</span>
             </button>
             <button
-              className="btn-state-pink"
+              id="btn-state-pink"
+              className="btn-state"
               type="button"
+              value="Réparable"
               onClick={handleClickInformation}
             >
-              Réparable
+              <span>Réparable</span>
             </button>
             <button
-              className="btn-state-red"
+              id="btn-state-red"
+              className="btn-state"
               type="button"
+              value="Fin de Vie"
               onClick={handleClickInformation}
             >
-              Fin de Vie
+              <span>Fin de Vie</span>
             </button>
           </div>
         </div>
 
-        <h2 className="title-brand">COMMENTAIRE</h2>
+        <h2 className="title-slide">COMMENTAIRE</h2>
         <div className="content-state">
-          <label htmlFor="state">Précisez l'état:</label>
-
-          <textarea id="story" name="story" rows="5" cols="33">
-            exemple: éclats sur l'écran, couleur rouge ...
-          </textarea>
+          <textarea
+            id="story"
+            value={information.Other}
+            defaultValue="Précisez..."
+            name="story"
+            rows="5"
+            cols="33"
+            onChange={handleChangeInformation}
+          />
         </div>
 
-        <h2 className="title-model">MODELE</h2>
-        <div className="content-model">
-          <label htmlFor="modele">CHOISISSEZ LE MODELE</label>
-          <select name="model" id="modelChoice">
-            <option value="samsunggalaxys9"> SAMSUNG GALAXY S9</option>
-            <option value="samsungs10plus">SAMSUNG GALAXY S10+</option>
-            <option value="samsungnote8">SAMSUNG GALAXY NOTE 8</option>
-            <option value="samsungzflip4">SAMSUNG GALAXY Z FLIP 4</option>
-            <option value="samsungS20"> SAMSUNG GALAXY S20</option>
-            <option value="samsungA40"> SAMSUNG A40</option>
-          </select>
-        </div>
-
-        <h2 className="title-ram">RAM</h2>
+        <h2 className="title-slide">RAM</h2>
         <div className="content-ram">
           <button
             className="btn-ram"
@@ -206,7 +236,7 @@ function SlideInformation() {
             6 GO
           </button>
           <button
-            className="btn-stock"
+            className="btn-ram"
             type="button"
             onClick={handleClickInformation}
           >
@@ -228,7 +258,7 @@ function SlideInformation() {
           </button>
         </div>
 
-        <h2 className="title-stockage">STOCKAGE</h2>
+        <h2 className="title-slide">STOCKAGE</h2>
         <div className="content-stockage">
           <button
             className="btn-stock"
