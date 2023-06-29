@@ -89,6 +89,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -102,17 +103,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -120,6 +125,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -144,6 +150,7 @@ $width-desktop: 850px;
     @content;
   }
 }
+
 @mixin mobile {
   @media (max-width: #{$width-mobile}) {
     @content;
@@ -171,4 +178,8 @@ $width-desktop: 850px;
   bottom: 0;
   right: 0;
   z-index: -1;
+
+  @include mobile {
+    background-image: none;
+  }
 }

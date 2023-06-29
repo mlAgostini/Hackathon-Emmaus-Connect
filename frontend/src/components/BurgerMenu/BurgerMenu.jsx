@@ -23,8 +23,9 @@ function BurgerMenu() {
   };
   const defaultStyle = {
     bmBurgerButton: {
-      width: "10vw",
+      width: "12vw",
       height: "5vh",
+      marginTop: "-10%",
     },
     bmCrossButton: {
       height: "2px",
