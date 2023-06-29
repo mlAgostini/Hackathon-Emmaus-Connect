@@ -9,8 +9,8 @@ CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `Firstname` varchar(100) NOT NULL,
   `Lastname` varchar(100) NOT NULL,
-  `IsAdmmin` tinyint(1) NOT NULL,
   `Region` varchar(100) NOT NULL,
+  `Password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -24,12 +24,11 @@ DROP TABLE IF EXISTS `model`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `model` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `Brand` varchar(100) NOT NULL,
   `Model_name` varchar(100) NOT NULL,
   `RAM` int NOT NULL,
   `Memory` int NOT NULL,
-  `Buy_price` int DEFAULT NULL,
-  `Sell_Price` int DEFAULT NULL,
-  `Condition` varchar(100) NOT NULL,
+  `Device_condition` varchar(100) NOT NULL,
   `Other` varchar(500) DEFAULT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -47,6 +46,8 @@ DROP TABLE IF EXISTS `stock`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stock` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `Price` INT NULL,
+  `Price_category` VARCHAR(10) NULL,
   `model_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `xrvgyuhij_idx` (`model_id`),

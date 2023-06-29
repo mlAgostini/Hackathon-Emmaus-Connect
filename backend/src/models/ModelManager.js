@@ -7,32 +7,29 @@ class ModelManager extends AbstractManager {
 
   insert(model) {
     return this.database.query(
-      `insert into ${this.table} (Brand, Model_name, RAM, Memory, Buy_price, Sell_Price, Condition, Other) values (?,?,?,?,?,?,?,?)`,
+      `insert into ${this.table} (Brand, Model_name, RAM, Memory, Device_condition, Other, user_id) values (?,?,?,?,?,?,?)`,
       [
         model.Brand,
         model.Model_name,
         model.RAM,
         model.Memory,
-        model.Buy_price,
-        model.Sell_price,
-        model.Condition,
-        model.other,
+        model.Device_condition,
+        model.Other,
+        model.user_id,
       ]
     );
   }
 
   update(model) {
     return this.database.query(
-      `update ${this.table} set Brand= ?, Model_name= ?, RAM= ?, Memory= ?, Buy_price= ?, Sell_Price= ?, Condition= ?, Other= ? where id = ?`,
+      `update ${this.table} set Brand= ?, Model_name= ?, RAM= ?, Memory= ?, Device_condition= ?, Other= ? where id = ?`,
       [
         model.Brand,
         model.Model_name,
         model.RAM,
         model.Memory,
-        model.Buy_price,
-        model.Sell_price,
-        model.Condition,
-        model.other,
+        model.Device_condition,
+        model.Other,
       ]
     );
   }

@@ -7,15 +7,15 @@ class StockManager extends AbstractManager {
 
   insert(stock) {
     return this.database.query(
-      `insert into ${this.table} (model_id) values (?)`,
-      [stock.model_id]
+      `insert into ${this.table} (Price, Price_category, model_id) values (?,?,?)`,
+      [stock.Price, stock.Price_category, stock.model_id]
     );
   }
 
   update(stock) {
     return this.database.query(
-      `update ${this.table} set model_id = ? where id = ?`,
-      [stock.model_id]
+      `update ${this.table} set model_id = ?, Price= ?, Price_category= ? where id = ?`,
+      [stock.Price, stock.Price_category, stock.model_id]
     );
   }
 }
