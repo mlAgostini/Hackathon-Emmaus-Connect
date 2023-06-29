@@ -377,4 +377,3 @@ function SlideInformation() {
 }
 
 export default SlideInformation;
-
