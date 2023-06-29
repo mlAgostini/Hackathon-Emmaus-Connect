@@ -9,17 +9,19 @@ function SlideInformation() {
     Model_name: "",
     RAM: "",
     Memory: "",
-    Sell_Price: "",
-    Condition: "",
+    Device_condition: "",
     Other: "",
-    user_id: "",
+    user_id: 1,
   });
+  // console.log(
+  //   "🚀 ~ file: SlideInformation.jsx:16 ~ SlideInformation ~ information:",
+  //   information
+  // );
 
   // useState user
   const [user, setUser] = useState({
     Firstname: "",
     Lastname: "",
-    IsAdmin: "",
     Region: "",
   });
 
@@ -37,24 +39,15 @@ function SlideInformation() {
         console.error(err);
       });
   };
+
   // handle Click Information
   const handleClickInformation = (evt) => {
-    setInformation({
-      ...information,
+    setInformation((previousInfo) => ({
+      ...previousInfo,
       [evt.target.name]: evt.target.value,
-    });
+    }));
   };
-  // function change style Onclick
-  const [style, setStyle] = useState("buttonNoClick");
 
-  const changeStyleButtonClick = () => {
-    setStyle("buttonClick");
-  };
-  // Handle Click Global
-  const handleClickGlobal = (evt) => {
-    handleClickInformation(evt);
-    changeStyleButtonClick();
-  };
   // handle Change Information textarea
   const handleChangeInformation = (evt) => {
     setInformation({
@@ -62,6 +55,17 @@ function SlideInformation() {
       Other: evt.target.value,
     });
   };
+  // function change style Onclick
+  // const [style, setStyle] = useState("buttonNoClick");
+
+  // const changeStyleButtonClick = () => {
+  //   setStyle("buttonClick");
+  // };
+  // Handle Click Global
+  // const handleClickGlobal = (evt) => {
+  //   handleClickInformation(evt);
+  //   changeStyleButtonClick();
+  // };
 
   // handle Submit Information formulaire
   const handleSubmitInformation = (evt) => {
@@ -83,11 +87,14 @@ function SlideInformation() {
           <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              className={style}
+              // className={style}
               id="btn-samsung"
-              value="samsung"
-              onClick={handleClickGlobal}
               type="button"
+              value="samsung"
+              name="Brand"
+              onClick={(evt) => {
+                handleClickInformation(evt);
+              }}
             >
               <a
                 href="https://www.samsung.com/fr/mobile/"
@@ -102,7 +109,8 @@ function SlideInformation() {
               id="btn-huawei"
               type="button"
               value="huawei"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <a
                 href="https://consumer.huawei.com/fr/phones/"
@@ -117,7 +125,8 @@ function SlideInformation() {
               id="btn-honor"
               type="button"
               value="Honor"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <a
                 href="https://www.hihonor.com/fr/"
@@ -132,7 +141,8 @@ function SlideInformation() {
               id="btn-xiaomi"
               type="button"
               value="Xiaomi"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <span>Xiaomi</span>
             </button>
@@ -141,7 +151,8 @@ function SlideInformation() {
               id="btn-oneplus"
               type="button"
               value="OnePlus"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <span>OnePlus</span>
             </button>
@@ -150,7 +161,8 @@ function SlideInformation() {
               id="btn-motorola"
               type="button"
               value="Motorola"
-              onClick={handleClickGlobal}
+              name="Brand"
+              onClick={handleClickInformation}
             >
               <span>Motorola</span>
             </button>
@@ -158,9 +170,17 @@ function SlideInformation() {
           <h2 className="title-slide">MODELE</h2>
           <div className="content-model">
             <label htmlFor="modele">CHOISISSEZ LE MODELE</label>
-            <select name="model" id="modelChoice">
-              <option value="samsunggalaxys9">--</option>
-              <option value="samsunggalaxys9"> SAMSUNG GALAXY S9</option>
+            <select
+              value={information.Model_name}
+              name="Model_name"
+              id="Model_name"
+              onChange={(e) =>
+                setInformation({ ...information, Model_name: e.target.value })
+              }
+            >
+              <option value="">--</option>
+              <option value="samsunggalaxys9">SAMSUNG GALAXY S9</option>
+
               <option value="samsungs10plus">SAMSUNG GALAXY S10+</option>
               <option value="samsungnote8">SAMSUNG GALAXY NOTE 8</option>
               <option value="samsungzflip4">SAMSUNG GALAXY Z FLIP 4</option>
@@ -174,6 +194,8 @@ function SlideInformation() {
               id="btn-state-green"
               className="btn-state1"
               type="button"
+              value="reconditionné"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Reconditionné</span>
@@ -182,7 +204,8 @@ function SlideInformation() {
               id="btn-state-yellow"
               className="btn-state1"
               type="button"
-              value="Reconditionné"
+              value="Reconditionnable"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Reconditionnable</span>
@@ -192,6 +215,7 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Bloqué"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Bloqué</span>
@@ -201,6 +225,7 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Réparable"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Réparable</span>
@@ -210,6 +235,7 @@ function SlideInformation() {
               className="btn-state"
               type="button"
               value="Fin de Vie"
+              name="Device_condition"
               onClick={handleClickInformation}
             >
               <span>Fin de Vie</span>
@@ -234,6 +260,8 @@ function SlideInformation() {
         <div className="content-ram">
           <button
             className="btn-ram"
+            value="2"
+            name="RAM"
             onClick={handleClickInformation}
             type="button"
           >
@@ -242,6 +270,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="4"
+            name="RAM"
             onClick={handleClickInformation}
           >
             4 GO
@@ -249,6 +279,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="6"
+            name="RAM"
             onClick={handleClickInformation}
           >
             6 GO
@@ -256,6 +288,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="8"
+            name="RAM"
             onClick={handleClickInformation}
           >
             8GO
@@ -263,6 +297,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="12"
+            name="RAM"
             onClick={handleClickInformation}
           >
             12 GO
@@ -270,6 +306,8 @@ function SlideInformation() {
           <button
             className="btn-ram"
             type="button"
+            value="16"
+            name="RAM"
             onClick={handleClickInformation}
           >
             16 GO
@@ -280,6 +318,8 @@ function SlideInformation() {
         <div className="content-stockage">
           <button
             className="btn-stock"
+            value="16"
+            name="Memory"
             onClick={handleClickInformation}
             type="button"
           >
@@ -288,6 +328,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="32"
+            name="Memory"
             onClick={handleClickInformation}
           >
             32 GO
@@ -295,6 +337,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="64"
+            name="Memory"
             onClick={handleClickInformation}
           >
             64 GO
@@ -302,6 +346,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="128"
+            name="Memory"
             onClick={handleClickInformation}
           >
             128 GO
@@ -309,6 +355,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="256"
+            name="Memory"
             onClick={handleClickInformation}
           >
             256 GO
@@ -316,6 +364,8 @@ function SlideInformation() {
           <button
             className="btn-stock"
             type="button"
+            value="+512"
+            name="Memory"
             onClick={handleClickInformation}
           >
             +512 GO
@@ -331,3 +381,4 @@ function SlideInformation() {
 }
 
 export default SlideInformation;
+
