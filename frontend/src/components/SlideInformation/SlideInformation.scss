@@ -57,7 +57,7 @@
   background-size: 101%;
 }
 .title-slide {
-  font-family: $font-title;
+  font-family: $font-title-content;
   color: $red;
   text-align: center;
   font-size: 30px;
@@ -97,7 +97,7 @@
 #btn-oneplus span,
 #btn-motorola span {
   color: $blue;
-  font-family: $font-title;
+  font-family: $font-title-content;
   text-decoration: underline;
   font-size: 16px;
   margin-top: 110%;
@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: $font-title;
+  font-family: $font-title-content;
   color: $blue;
   font-size: 20px;
 }
@@ -118,7 +118,7 @@
 }
 
 #modelChoice {
-  font-family: $font-title;
+  font-family: $font-title-content;
   color: $blue;
   font-size: 20px;
 }
@@ -155,7 +155,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  font-family: $font-title;
+  font-family: $font-title-content;
   color: $blue;
   font-size: 20px;
 }
@@ -163,14 +163,14 @@
 .btn-state span,
 .btn-state1 span {
   color: $blue;
-  font-family: $font-title;
+  font-family: $font-title-content;
   font-size: 20px;
   margin-top: 76px;
   display: block;
   font-weight: 300;
 }
 #story {
-  font-family: $font-title;
+  font-family: $font-title-content;
   font-size: 18px;
   border-radius: 10px;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
@@ -188,7 +188,7 @@
   width: 100px;
   height: 50px;
   margin: 2%;
-  font-family: $font-title;
+  font-family: $font-title-content;
   background-color: $red;
   border: none;
   border-radius: 10px;
@@ -209,7 +209,7 @@
   width: 100px;
   height: 50px;
   margin: 2%;
-  font-family: $font-title;
+  font-family: $font-title-content;
   background-color: $yellow;
   border: none;
   border-radius: 10px;
@@ -242,7 +242,7 @@
 }
 .buttonClick span {
   color: $blue;
-  font-family: $font-title;
+  font-family: $font-title-content;
   text-decoration: underline;
   font-size: 16px;
   margin-top: 110%;
