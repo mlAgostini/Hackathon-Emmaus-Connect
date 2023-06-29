@@ -1,0 +1,25 @@
+@import "../../App.scss";
+.errorContainer {
+  background-color: $yellow;
+  margin-top: 3vh;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: $font-title-content;
+  font-weight: 100;
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 2;
+}
+
+.errorT {
+}
+
+.oups {
+  color: $red;
+  font-size: larger;
+  font-weight: bold;
+}
