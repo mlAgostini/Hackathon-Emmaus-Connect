@@ -18,6 +18,13 @@
   height: 9vh;
   margin-top: -5%;
 }
+.title-emmaus-mobile {
+  font-family: $font-big-title;
+  color: $yellow;
+  font-size: 3vh;
+  margin-right: 26%;
+  margin-top: -1%;
+}
 
 .navBurger {
   margin-top: 2%;
@@ -31,6 +38,13 @@
   justify-content: space-between;
   height: 8vh;
 
+  .title-emmaus {
+    font-family: $font-big-title;
+    color: $yellow;
+    font-size: 3.5vh;
+    margin-right: 26%;
+    margin-top: 2%;
+  }
   .logoImg {
     margin-top: 1%;
     margin-left: 1%;
@@ -46,7 +60,7 @@
 
     a {
       text-decoration: none;
-      font-family: $font-title-content;
+      font-family: $font-title;
       color: $blue;
     }
 
