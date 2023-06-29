@@ -42,7 +42,7 @@ function Navbar() {
         <img className="logoImg" src={LogoEmmaus} alt="Logo Emmaus" />
         <div className="container-links">
           <div className="link-information">
-            <Link to="/informations">Enregistrer un téléphone</Link>
+            <Link to="/information">Enregistrer un téléphone</Link>
           </div>
           <div className="link-stockage">
             <Link to="/stockage">Voir les stocks disponibles</Link>
