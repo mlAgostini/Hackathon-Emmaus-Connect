@@ -5,41 +5,41 @@ import BurgerBtn from "../../assets/images/logoMenuBurger.png";
 function BurgerMenu() {
   const defaultStyle = {
     bmBurgerButton: {
-      position: "fixed",
-      width: "36px",
-      height: "30px",
+      position: "absolute",
+      width: "60px",
+      height: "auto",
       left: "36px",
       top: "36px",
-    },
-    bmBurgerBars: {
-      background: "#611959",
-    },
-    bmBurgerBarsHover: {
-      background: "#611959",
     },
     bmCrossButton: {
       height: "24px",
       width: "24px",
     },
     bmCross: {
-      background: "#bdc3c7",
+      background: "#496374",
     },
     bmMenuWrap: {
       position: "fixed",
-      height: "100%",
     },
     bmMenu: {
+      display: "flex",
+      justifyContent: "space-around",
+      // alignItems: "center",
       background: "#ffcc1b",
       padding: "2.5em 1.5em 0",
       fontSize: "1.15em",
       overflow: "hidden !important",
+      marginTop: "-60px",
+      marginLeft: "-30px",
     },
     bmItemList: {
       color: "#b8b7ad",
       padding: "0.8em",
+      textAlign: "center",
     },
     bmItem: {
       display: "block",
+      textDecoration: "none",
     },
     bmOverlay: {
       background: "none",
