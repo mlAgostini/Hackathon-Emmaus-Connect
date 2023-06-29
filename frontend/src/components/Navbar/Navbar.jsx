@@ -30,6 +30,7 @@ function Navbar() {
     return (
       <div className="navHeader">
         <img className="logoImgMobile" src={LogoEmmaus} alt="Logo Emmaus" />
+        <div className="title-emmaus-mobile">Emmaüs Connect</div>
         <div className="navBurger">
           <BurgerMenu />
         </div>
@@ -40,9 +41,10 @@ function Navbar() {
     return (
       <div className="navHeaderPC">
         <img className="logoImg" src={LogoEmmaus} alt="Logo Emmaus" />
+        <div className="title-emmaus">Emmaüs Connect</div>
         <div className="container-links">
           <div className="link-information">
-            <Link to="/informations">Enregistrer un téléphone</Link>
+            <Link to="/information">Enregistrer un téléphone</Link>
           </div>
           <div className="link-stockage">
             <Link to="/stockage">Voir les stocks disponibles</Link>

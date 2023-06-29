@@ -89,7 +89,13 @@ function SlideInformation() {
               onClick={handleClickGlobal}
               type="button"
             >
-              <span>Samsung</span>
+              <a
+                href="https://www.samsung.com/fr/mobile/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Samsung</span>
+              </a>
             </button>
             <button
               className="buttonNoClick"
@@ -98,7 +104,13 @@ function SlideInformation() {
               value="huawei"
               onClick={handleClickGlobal}
             >
-              <span>Huawei</span>
+              <a
+                href="https://consumer.huawei.com/fr/phones/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Huawei</span>
+              </a>
             </button>
             <button
               className="buttonNoClick"
@@ -107,7 +119,13 @@ function SlideInformation() {
               value="Honor"
               onClick={handleClickGlobal}
             >
-              <span>Honor</span>
+              <a
+                href="https://www.hihonor.com/fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Honor</span>
+              </a>
             </button>
             <button
               className="buttonNoClick"
