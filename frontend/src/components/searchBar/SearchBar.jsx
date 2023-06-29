@@ -62,16 +62,18 @@ function SearchBar() {
 
   return (
     <div className="inputContainer">
-      <input
-        type="text"
-        className="inputS"
-        placeholder="Search mobile phone"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <button className="stockBtn" type="button" onClick={handleClick}>
-        Go
-      </button>
+      <div className="searchBar">
+        <input
+          type="text"
+          className="inputS"
+          placeholder="Search mobile phone"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        <button className="stockBtn" type="button" onClick={handleClick}>
+          Go
+        </button>
+      </div>
       {isError ? (
         <Error />
       ) : (

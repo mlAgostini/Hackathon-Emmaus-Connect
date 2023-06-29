@@ -9,7 +9,7 @@ function SlideInformation() {
     Model_name: "",
     RAM: "",
     Memory: "",
-    Device_condition: "Comme neuf",
+    Device_condition: "Reconditionné",
     Other: "",
     user_id: 1,
   });
@@ -51,18 +51,45 @@ function SlideInformation() {
       Other: evt.target.value,
     });
   };
-  // function change style Onclick
+  // function change style Onclick brand
   const [style, setStyle] = useState("buttonNoClick");
-
+  // function change style brand
   const changeStyleButtonClick = () => {
     setStyle("buttonClick");
   };
-  // Handle Click Global
+  // Handle Click Global brand
   const handleClickGlobal = (evt) => {
     handleClickInformation(evt);
     changeStyleButtonClick();
   };
-
+  // function change style Onclick state
+  const [styleState, setStyleState] = useState("btn-state1");
+  // function change style state
+  const changeStyleButtonClickState = () => {
+    setStyleState("btn-state1-click");
+  };
+  // function change style Onclick ram
+  const [styleRam, setStyleRam] = useState("btn-ram");
+  // function change style ram
+  const changeStyleButtonClickRam = () => {
+    setStyleRam("btn-ram-click");
+  };
+  // Handle Click Global ram
+  const handleClickGlobalRam = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClickRam();
+  };
+  // function change style Onclick stock
+  const [styleStock, setStyleStock] = useState("btn-stock");
+  // function change style Stock
+  const changeStyleButtonClickStock = () => {
+    setStyleStock("btn-stock-click");
+  };
+  // Handle Click Global Stock
+  const handleClickGlobalStock = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClickStock();
+  };
   // handle Submit Information formulaire
   const handleSubmitInformation = (evt) => {
     evt.preventDefault();
@@ -188,11 +215,11 @@ function SlideInformation() {
           <div className="content-state">
             <button
               id="btn-state-green"
-              className="btn-state1"
+              className={styleState}
               type="button"
               value="reconditionné"
               name="Device_condition"
-              onClick={changeStyleButtonClick}
+              onClick={changeStyleButtonClickState}
             >
               <span>Reconditionné</span>
             </button>
@@ -202,7 +229,7 @@ function SlideInformation() {
               type="button"
               value="Reconditionnable"
               name="Device_condition"
-              onClick={changeStyleButtonClick}
+              onClick={changeStyleButtonClickState}
             >
               <span>Reconditionnable</span>
             </button>
@@ -258,7 +285,7 @@ function SlideInformation() {
             className="btn-ram"
             value="2"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
             type="button"
           >
             2 GO
@@ -268,7 +295,7 @@ function SlideInformation() {
             type="button"
             value="4"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             4 GO
           </button>
@@ -277,7 +304,7 @@ function SlideInformation() {
             type="button"
             value="6"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             6 GO
           </button>
@@ -286,16 +313,16 @@ function SlideInformation() {
             type="button"
             value="8"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             8GO
           </button>
           <button
-            className="btn-ram"
+            className={styleRam}
             type="button"
             value="12"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickGlobalRam}
           >
             12 GO
           </button>
@@ -304,7 +331,7 @@ function SlideInformation() {
             type="button"
             value="16"
             name="RAM"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             16 GO
           </button>
@@ -316,7 +343,7 @@ function SlideInformation() {
             className="btn-stock"
             value="16"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
             type="button"
           >
             16 GO
@@ -326,7 +353,7 @@ function SlideInformation() {
             type="button"
             value="32"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             32 GO
           </button>
@@ -335,7 +362,7 @@ function SlideInformation() {
             type="button"
             value="64"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             64 GO
           </button>
@@ -344,16 +371,16 @@ function SlideInformation() {
             type="button"
             value="128"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             128 GO
           </button>
           <button
-            className="btn-stock"
+            className={styleStock}
             type="button"
             value="256"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickGlobalStock}
           >
             256 GO
           </button>
@@ -362,7 +389,7 @@ function SlideInformation() {
             type="button"
             value="+512"
             name="Memory"
-            onClick={handleClickGlobal}
+            onClick={handleClickInformation}
           >
             +512 GO
           </button>

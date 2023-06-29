@@ -2,26 +2,27 @@ import "./recap.scss";
 import PropTypes from "prop-types";
 
 function Recap(props) {
-  const { mobileName, brand, etat, ram, memory, price, category, other } =
-    props;
+  const { mobileName, brand, ram, memory, price, category, other } = props;
   return (
     <div className="recapContainer">
       <h1 className="brand">{brand}</h1>
-      <h2>{mobileName}</h2>
+      <h2 className="model">{mobileName}</h2>
 
       <div className="recapCategory">
+        {/* <h3 className="categoryTitle">Category</h3> */}
         <span>{category}</span>
       </div>
       <div className="circles">
-        <div className="recapCondition">
-          <span>Etat {etat}</span>
-        </div>
+        <div className="recapCondition">{/* <span>{etat}</span> */}</div>
+        <h3 className="conditionTitle">Etat</h3>
         <div className="recapRam">
-          <span>RAM {ram}</span>
+          <span>{ram}</span>
         </div>
+        <h3 className="ramTitle">RAM</h3>
         <div className="recapStock">
-          <span>Stockage {memory}</span>
+          <span>{memory}</span>
         </div>
+        <h3 className="stock_Title">Stockage</h3>
       </div>
       <div className="priceBtn">
         <h4 className="price_title">Prix de vente</h4>
@@ -29,7 +30,12 @@ function Recap(props) {
           {price} €
         </button>
       </div>
-      <span>{other}</span>
+      <div className="comments">
+        {" "}
+        <p>
+          Remarques: <span>{other}</span>
+        </p>{" "}
+      </div>
     </div>
   );
 }
@@ -37,7 +43,7 @@ function Recap(props) {
 Recap.propTypes = {
   mobileName: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  etat: PropTypes.string.isRequired,
+  // etat: PropTypes.string.isRequired,
   ram: PropTypes.string.isRequired,
   memory: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
