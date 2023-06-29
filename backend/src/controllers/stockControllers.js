@@ -12,6 +12,35 @@ const browse = (req, res) => {
     });
 };
 
+// const getModelName = (req, res) => {
+//   const name = req.params.name;
+//   console.log(name)
+//   models.stock
+
+//     .getByName(name)
+//     .then((rows) => {
+//       res.send(rows);
+
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
+
+const getModelName = (req, res) => {
+  const { name } = req.params;
+  models.stock
+    .getByName(name)
+    .then((rows) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const read = (req, res) => {
   //   const { account_id } = req.query;
 
@@ -86,4 +115,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  getModelName,
 };

@@ -1,0 +1,71 @@
+@import "../../app.scss";
+
+// CSS for Mobile ...
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $blue;
+  height: 8vh;
+
+  @include desktop {
+    background-color: $white;
+  }
+}
+
+.logoImgMobile {
+  height: 9vh;
+  margin-top: -5%;
+}
+
+.navBurger {
+  margin-top: 2%;
+}
+
+// CSS for DESKTOP ...
+
+.navHeaderPC {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+
+  .logoImg {
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 10vh;
+  }
+
+  .container-links {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    a {
+      text-decoration: none;
+      font-family: $font-title-content;
+      color: $blue;
+    }
+
+    a:hover {
+      color: $yellow;
+    }
+
+    .link-information {
+      margin-right: 7%;
+      width: 60%;
+    }
+
+    .link-stockage {
+      margin-right: 10%;
+      width: 60%;
+    }
+
+    .link-deconnexion {
+      width: 60%;
+    }
+  }
+}
