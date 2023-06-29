@@ -152,3 +152,11 @@ $width-desktop: 850px;
     @content;
   }
 }
+
+.background-wrapper {
+  background-image: url(../../assets/images/background-desktop.png);
+  background-size: cover;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
