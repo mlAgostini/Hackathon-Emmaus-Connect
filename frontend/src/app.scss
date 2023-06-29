@@ -125,14 +125,11 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
-  font-family: "Balo";
-  src: url("frontend/src/assets/fonts/Baloo-Regular.woff") format("woff");
-  src: url("frontend/src/assets/fonts/Baloo-Regular.ttf") format("truetype");
-}
 @import url("https://fonts.googleapis.com/css2?family=Nova+Round&display=swap");
-$font-title-content: "Nova Round", cursive;
-$font-big-title: "Balo";
+$font-big-title: "Concert One", cursive;
+
+@import url("https://fonts.googleapis.com/css2?family=Nova+Round&display=swap");
+$font-title: "Nova Round", cursive;
 
 $yellow: #ffcc1b;
 $red: #800f1c;

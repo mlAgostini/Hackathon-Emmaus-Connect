@@ -1,90 +1,161 @@
 @import "../../App.scss";
 
-.btn-samsung {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-samsung {
   background: url("../../assets/images/samsung.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+  background-size: contain;
 }
-.btn-huawei {
-  display: inline-block;
-  padding: 0 0 0 0px;
-  background: url("../../assets/images/huawei.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+#btn-huawei {
+  background: url("../../assets/images/huaweii.png") no-repeat, #fff;
+  background-size: contain;
 }
-.btn-honor {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-honor {
   background: url("../../assets/images/honor.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+  background-size: contain;
 }
-.btn-xiaomi {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-xiaomi {
   background: url("../../assets/images/xiaomi.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+  background-size: contain;
 }
-.btn-oneplus {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-oneplus {
   background: url("../../assets/images/oneplus.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+  background-size: contain;
 }
-.btn-motorola {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-motorola {
   background: url("../../assets/images/motorola.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+  background-size: contain;
 }
-.btn-state-green {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-state-green {
   background: url("../../assets/images/backbroungVert.png") no-repeat;
-  height: 124px;
-  width: 170px;
-  background-size: 100%;
+  background-size: cover;
+  background-size: 101%;
 }
-.btn-state-yellow {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-state-yellow {
   background: url("../../assets/images/backgroundYellow.png") no-repeat;
-  height: 124px;
-  width: 170px;
-  background-size: 100%;
+  background-size: cover;
+  background-size: 101%;
 }
-.btn-state-orange {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-state-orange {
   background: url("../../assets/images/backgroundOrange.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 100%;
+  background-size: cover;
+  background-size: 101%;
 }
-.btn-state-pink {
-  display: inline-block;
-  padding: 0 0 0 0px;
+#btn-state-pink {
   background: url("../../assets/images/backgroundPink.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 100%;
+  background-size: cover;
+  background-size: 101%;
 }
-.btn-state-red {
+#btn-state-red {
+  background: url("../../assets/images/backgroundRed.png") no-repeat;
+  background-size: cover;
+  background-size: 101%;
+}
+.title-slide {
+  font-family: $font-title;
+  color: $red;
+  text-align: center;
+  font-size: 30px;
+  padding: 2%;
+  margin: 5% 1% 5% 1%;
+}
+.content-brand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-brand {
   display: inline-block;
   padding: 0 0 0 0px;
-  background: url("../../assets/images/backgroundRed.png") no-repeat;
-  height: 125px;
-  width: 125px;
-  background-size: 100%;
+  height: 100px;
+  width: 100px;
+  background-size: 50%;
+  margin: 7px 7px 34px 7px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+}
+.btn-brand span {
+  color: $blue;
+  font-family: $font-title;
+  text-decoration: underline;
+  font-size: 16px;
+  margin-top: 110%;
+  display: block;
+}
+
+.content-model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-title;
+  color: $blue;
+  font-size: 20px;
+}
+
+.content-model label {
+  margin: 3%;
+}
+
+#modelChoice {
+  font-family: $font-title;
+  color: $blue;
+  font-size: 20px;
+}
+
+.btn-state1 {
+  display: inline-block;
+  padding: 0 0 0 0px;
+  height: 100px;
+  width: 150px;
+  border: none;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+  margin: 1%;
+  border-radius: 10px;
+}
+.btn-state {
+  display: inline-block;
+  padding: 0 0 0 0px;
+  height: 100px;
+  width: 100px;
+  border: none;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+  margin: 1%;
+  border-radius: 10px;
+}
+.content-state {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  font-family: $font-title;
+  color: $blue;
+  font-size: 20px;
+}
+
+.btn-state span,
+.btn-state1 span {
+  color: $white;
+  text-shadow: rgb(83, 83, 83) 1px 1px 2px;
+  font-family: $font-title;
+  font-size: 20px;
+  margin-top: 76px;
+  display: block;
+  font-weight: 300;
+}
+#story {
+  font-family: $font-title;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+  color: $red;
+  border: none;
+}
+.content-ram {
+  display: flex;
+}
+
+.btn-ram {
+  width: 100px;
+  height: 50px;
+  margin: 2%;
 }
