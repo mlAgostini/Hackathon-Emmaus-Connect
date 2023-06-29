@@ -19,19 +19,9 @@ class StockManager extends AbstractManager {
     );
   }
 
-  // getByName(name) {
-  //   return this.database.query(
-  //     `SELECT model.*
-  //      FROM model
-  //      JOIN stock ON model.id = stock.model_id
-  //      WHERE model.Model_name = ?
-  //     `,
-  //     [name]
-  //   );
-  // }
   getByName(name) {
     return this.database.query(
-      `SELECT model.*
+      `SELECT model.*, stock.Price, stock.Price_category
        FROM model
        JOIN stock ON model.id = stock.model_id
        WHERE model.Model_name = ?`,

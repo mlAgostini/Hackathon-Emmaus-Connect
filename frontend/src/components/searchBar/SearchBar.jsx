@@ -2,16 +2,19 @@ import { useState } from "react";
 import axios from "axios";
 import "./SearchBar.scss";
 import Recap from "../recap/Recap";
+import Error from "../Notfound/NotFound";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [brand, setBrand] = useState("");
   const [mobileName, setMobileName] = useState("");
   const [etat, setEtat] = useState("");
   const [price, setPrice] = useState("");
   const [memory, setMemory] = useState("");
   const [other, setOther] = useState("");
   const [ram, setRam] = useState("");
-  // const [mobileModel, setMobileModel] = useState("");
+  const [category, setCategory] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -25,16 +28,28 @@ function SearchBar() {
           const modelData = response.data[0][0]; // Access the first element of the first array
 
           if (modelData) {
-            const { Model_name, RAM, Condition, Sell_Price, Memory, Other } =
-              modelData;
+            const {
+              Brand,
+              Model_name,
+              Price_category,
+              RAM,
+              Device_condition,
+              Price,
+              Memory,
+              Other,
+            } = modelData;
             setMobileName(Model_name);
-            setEtat(`${Condition}`);
-            setPrice(Sell_Price);
+            setEtat(Device_condition);
+            setBrand(Brand);
+            setPrice(Price);
             setMemory(Memory);
+            setCategory(Price_category);
             setOther(Other);
             setRam(RAM);
+            setIsError(false);
           } else {
             setMobileName("Model not found");
+            setIsError(true);
           }
         })
         .catch((error) => {
@@ -57,14 +72,20 @@ function SearchBar() {
       <button className="stockBtn" type="button" onClick={handleClick}>
         Go
       </button>
-      <Recap
-        mobileName={mobileName}
-        price={price}
-        etat={etat}
-        memory={memory}
-        other={other}
-        ram={ram}
-      />
+      {isError ? (
+        <Error />
+      ) : (
+        <Recap
+          mobileName={mobileName}
+          price={price}
+          etat={etat}
+          memory={memory}
+          other={other}
+          ram={ram}
+          category={category}
+          brand={brand}
+        />
+      )}
     </div>
   );
 }
