@@ -151,13 +151,24 @@ $width-desktop: 850px;
 }
 
 .background-wrapper {
-  background-image: url(../../assets/images/background-desktop.png);
-  background-size: cover;
-  background-position-y: 100vh;
-  height: 100vh;
+  position: relative;
   width: 100vw;
+  height: 100vh;
 
   @include mobile {
     background-image: none;
   }
+}
+
+.background-wrapper::before {
+  content: "";
+  background-image: url(../../assets/images/background-desktop.png);
+  background-size: 110%;
+  background-position-y: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
