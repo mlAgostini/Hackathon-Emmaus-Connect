@@ -55,6 +55,24 @@ function SlideInformation() {
       Other: evt.target.value,
     });
   };
+  // function change style Onclick
+  const [style, setStyle] = useState("buttonNoClick");
+
+  const changeStyleButtonClick = () => {
+    setStyle("buttonClick");
+  };
+  // Handle Click Global
+  const handleClickGlobal = (evt) => {
+    handleClickInformation(evt);
+    changeStyleButtonClick();
+  };
+  // handle Change Information textarea
+  const handleChangeInformation = (evt) => {
+    setInformation({
+      ...information,
+      Other: evt.target.value,
+    });
+  };
 
   // handle Submit Information formulaire
   const handleSubmitInformation = (evt) => {
@@ -76,39 +94,42 @@ function SlideInformation() {
           <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              className="btn-brand"
+              className={style}
               id="btn-samsung"
+              type="button"
               value="samsung"
               name="Brand"
               onClick={(evt) => {
                 handleClickInformation(evt);
               }}
-              type="button"
+        
             >
               <span>Samsung</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-huawei"
               type="button"
               value="huawei"
               name="Brand"
               onClick={handleClickInformation}
+
             >
               <span>Huawei</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-honor"
               type="button"
               value="Honor"
               name="Brand"
               onClick={handleClickInformation}
+
             >
               <span>Honor</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-xiaomi"
               type="button"
               value="Xiaomi"
@@ -118,22 +139,25 @@ function SlideInformation() {
               <span>Xiaomi</span>
             </button>
             <button
-              className="btn-brand"
+
+              className="buttonNoClick"
               id="btn-oneplus"
               type="button"
               value="OnePlus"
               name="Brand"
               onClick={handleClickInformation}
+
             >
               <span>OnePlus</span>
             </button>
             <button
-              className="btn-brand"
+              className="buttonNoClick"
               id="btn-motorola"
               type="button"
               value="Motorola"
               name="Brand"
               onClick={handleClickInformation}
+
             >
               <span>Motorola</span>
             </button>
@@ -151,6 +175,7 @@ function SlideInformation() {
             >
               <option value="">--</option>
               <option value="samsunggalaxys9">SAMSUNG GALAXY S9</option>
+
               <option value="samsungs10plus">SAMSUNG GALAXY S10+</option>
               <option value="samsungnote8">SAMSUNG GALAXY NOTE 8</option>
               <option value="samsungzflip4">SAMSUNG GALAXY Z FLIP 4</option>
@@ -174,8 +199,10 @@ function SlideInformation() {
               id="btn-state-yellow"
               className="btn-state1"
               type="button"
+
               value="Reconditionnable"
               name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Reconditionnable</span>
@@ -186,6 +213,7 @@ function SlideInformation() {
               type="button"
               value="Bloqué"
               name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Bloqué</span>
@@ -196,6 +224,7 @@ function SlideInformation() {
               type="button"
               value="Réparable"
               name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Réparable</span>
@@ -206,6 +235,7 @@ function SlideInformation() {
               type="button"
               value="Fin de Vie"
               name="Device_condition"
+
               onClick={handleClickInformation}
             >
               <span>Fin de Vie</span>
