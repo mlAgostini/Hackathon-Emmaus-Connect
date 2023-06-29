@@ -1,0 +1,67 @@
+@import "../../app.scss";
+
+.recapContainer {
+  background-color: $yellow;
+  margin-top: 3vh;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: $font-title-content;
+  font-weight: 100;
+}
+.brand {
+  font-weight: bold;
+  font-size: larger;
+  padding: 2vh;
+}
+.circles {
+  height: 10vh;
+  width: 100%;
+}
+.recapCategory {
+  height: 10vh;
+  width: 10vh;
+  background-color: $blue;
+  color: $white;
+  border-radius: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recapCondition {
+  height: 5vh;
+  width: 5vh;
+  background-color: $blue;
+  border-radius: 5vh;
+  position: relative;
+  top: 5vh;
+  left: 1vh;
+}
+
+.recapRam {
+  height: 5vh;
+  width: 5vh;
+  background-color: $blue;
+  border-radius: 5vh;
+  position: relative;
+  left: 12vh;
+}
+.recapStock {
+  height: 5vh;
+  width: 5vh;
+  background-color: $blue;
+  border-radius: 5vh;
+  position: relative;
+  left: 5vh;
+}
+
+.priceBtn {
+  position: absolute;
+  bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+}

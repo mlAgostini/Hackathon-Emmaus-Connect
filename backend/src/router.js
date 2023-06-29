@@ -26,6 +26,7 @@ router.post("/model", modelControllers.add);
 router.delete("/model/:id", modelControllers.destroy);
 
 router.get("/stock", stockControllers.browse);
+router.get("/stock/:name", stockControllers.getModelName);
 router.get("/stock/:id", stockControllers.read);
 router.put("/stock/:id", stockControllers.edit);
 router.post("/stock", stockControllers.add);

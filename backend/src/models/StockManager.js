@@ -18,6 +18,16 @@ class StockManager extends AbstractManager {
       [stock.Price, stock.Price_category, stock.model_id]
     );
   }
+
+  getByName(name) {
+    return this.database.query(
+      `SELECT model.*, stock.Price, stock.Price_category
+       FROM model
+       JOIN stock ON model.id = stock.model_id
+       WHERE model.Model_name = ?`,
+      [name]
+    );
+  }
 }
 
 module.exports = StockManager;
