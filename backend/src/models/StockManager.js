@@ -5,7 +5,6 @@ class StockManager extends AbstractManager {
     super({ table: "stock" });
   }
 
- 
   insert(stock) {
     return this.database.query(
       `insert into ${this.table} (model_id) values (?)`,
@@ -20,10 +19,23 @@ class StockManager extends AbstractManager {
     );
   }
 
-  get(stock) {
+  // getByName(name) {
+  //   return this.database.query(
+  //     `SELECT model.*
+  //      FROM model
+  //      JOIN stock ON model.id = stock.model_id
+  //      WHERE model.Model_name = ?
+  //     `,
+  //     [name]
+  //   );
+  // }
+  getByName(name) {
     return this.database.query(
-      `SELECT s.*, m.* FROM ${this.table} s JOIN model m ON s.model_id = m.id`,
-      [stock.model_id]
+      `SELECT model.*
+       FROM model
+       JOIN stock ON model.id = stock.model_id
+       WHERE model.Model_name = ?`,
+      [name]
     );
   }
 }
