@@ -4,7 +4,6 @@
     transform: scale(1);
   }
 
-
   50% {
     transform: scale(1.1);
   }
@@ -31,7 +30,6 @@
 }
 #btn-motorola {
   background: url("../../assets/images/motorola.png") no-repeat;
-
 }
 #btn-state-green {
   background: url("../../assets/images/backbroungVert.png") no-repeat;
@@ -59,7 +57,6 @@
   background-size: 101%;
 }
 .title-slide {
-
   font-family: $font-title-content;
 
   color: $red;
@@ -67,7 +64,6 @@
   font-size: 30px;
   padding: 2%;
   margin: 5% 1% 5% 1%;
-
 }
 .content-brand {
   display: flex;
@@ -81,7 +77,6 @@
 #btn-xiaomi,
 #btn-oneplus,
 #btn-motorola {
-
   display: inline-block;
   padding: 0 0 0 0px;
   height: 100px;
@@ -128,7 +123,6 @@
 }
 
 #modelChoice {
-
   font-family: $font-title-content;
 
   color: $blue;
@@ -181,7 +175,6 @@
 
 .btn-state span,
 .btn-state1 span {
-
   color: $blue;
   font-family: $font-title-content;
 
@@ -191,7 +184,6 @@
   font-weight: 300;
 }
 #story {
-
   font-family: $font-title-content;
 
   font-size: 18px;
@@ -206,7 +198,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .btn-ram {
@@ -273,5 +264,4 @@
   font-size: 16px;
   margin-top: 110%;
   display: block;
-
 }

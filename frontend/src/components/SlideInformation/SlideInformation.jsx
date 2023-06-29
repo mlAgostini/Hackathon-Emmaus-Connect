@@ -56,23 +56,16 @@ function SlideInformation() {
     });
   };
   // function change style Onclick
-  const [style, setStyle] = useState("buttonNoClick");
+  // const [style, setStyle] = useState("buttonNoClick");
 
-  const changeStyleButtonClick = () => {
-    setStyle("buttonClick");
-  };
+  // const changeStyleButtonClick = () => {
+  //   setStyle("buttonClick");
+  // };
   // Handle Click Global
-  const handleClickGlobal = (evt) => {
-    handleClickInformation(evt);
-    changeStyleButtonClick();
-  };
-  // handle Change Information textarea
-  const handleChangeInformation = (evt) => {
-    setInformation({
-      ...information,
-      Other: evt.target.value,
-    });
-  };
+  // const handleClickGlobal = (evt) => {
+  //   handleClickInformation(evt);
+  //   changeStyleButtonClick();
+  // };
 
   // handle Submit Information formulaire
   const handleSubmitInformation = (evt) => {
@@ -94,7 +87,7 @@ function SlideInformation() {
           <h2 className="title-slide">MARQUE</h2>
           <div className="content-brand">
             <button
-              className={style}
+              // className={style}
               id="btn-samsung"
               type="button"
               value="samsung"
@@ -102,7 +95,6 @@ function SlideInformation() {
               onClick={(evt) => {
                 handleClickInformation(evt);
               }}
-        
             >
               <span>Samsung</span>
             </button>
@@ -113,7 +105,6 @@ function SlideInformation() {
               value="huawei"
               name="Brand"
               onClick={handleClickInformation}
-
             >
               <span>Huawei</span>
             </button>
@@ -124,7 +115,6 @@ function SlideInformation() {
               value="Honor"
               name="Brand"
               onClick={handleClickInformation}
-
             >
               <span>Honor</span>
             </button>
@@ -139,14 +129,12 @@ function SlideInformation() {
               <span>Xiaomi</span>
             </button>
             <button
-
               className="buttonNoClick"
               id="btn-oneplus"
               type="button"
               value="OnePlus"
               name="Brand"
               onClick={handleClickInformation}
-
             >
               <span>OnePlus</span>
             </button>
@@ -157,7 +145,6 @@ function SlideInformation() {
               value="Motorola"
               name="Brand"
               onClick={handleClickInformation}
-
             >
               <span>Motorola</span>
             </button>
@@ -199,10 +186,8 @@ function SlideInformation() {
               id="btn-state-yellow"
               className="btn-state1"
               type="button"
-
               value="Reconditionnable"
               name="Device_condition"
-
               onClick={handleClickInformation}
             >
               <span>Reconditionnable</span>
@@ -213,7 +198,6 @@ function SlideInformation() {
               type="button"
               value="Bloqué"
               name="Device_condition"
-
               onClick={handleClickInformation}
             >
               <span>Bloqué</span>
@@ -224,7 +208,6 @@ function SlideInformation() {
               type="button"
               value="Réparable"
               name="Device_condition"
-
               onClick={handleClickInformation}
             >
               <span>Réparable</span>
@@ -235,7 +218,6 @@ function SlideInformation() {
               type="button"
               value="Fin de Vie"
               name="Device_condition"
-
               onClick={handleClickInformation}
             >
               <span>Fin de Vie</span>
