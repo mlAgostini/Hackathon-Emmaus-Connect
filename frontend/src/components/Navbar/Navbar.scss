@@ -1,11 +1,23 @@
+@import "../../app.scss";
+
 .navHeader {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-decoration: none;
+  background-color: $blue;
+  height: 8vh;
+
+  @include desktop {
+    background-color: $white;
+  }
 }
 
-.logoImg {
-  height: 10vh;
+img {
+  height: 9vh;
+  margin-top: -5%;
+}
+
+.navBurger {
+  margin-top: 2%;
 }

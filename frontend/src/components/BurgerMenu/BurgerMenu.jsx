@@ -1,22 +1,36 @@
 import { slide as Menu } from "react-burger-menu";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { LogingContext } from "../../contexts/LogingContext";
 import BurgerBtn from "../../assets/images/logoMenuBurger.png";
 
 function BurgerMenu() {
+  const navigating = useNavigate();
+  const { isOnline, loging, logout } = useContext(LogingContext);
+
+  const deconnexion = () => {
+    navigating("/");
+  };
+
+  const handleLogingLogout = () => {
+    if (isOnline) {
+      logout();
+      deconnexion();
+    } else {
+      loging();
+    }
+  };
   const defaultStyle = {
     bmBurgerButton: {
-      position: "absolute",
-      width: "60px",
+      width: "100%",
       height: "auto",
-      left: "36px",
-      top: "36px",
     },
     bmCrossButton: {
       height: "24px",
       width: "24px",
     },
     bmCross: {
-      background: "#496374",
+      background: "#F5F5F5",
     },
     bmMenuWrap: {
       position: "fixed",
@@ -24,22 +38,22 @@ function BurgerMenu() {
     bmMenu: {
       display: "flex",
       justifyContent: "space-around",
-      // alignItems: "center",
-      background: "#ffcc1b",
+      height: "50%",
+      background: "#021c3c",
       padding: "2.5em 1.5em 0",
       fontSize: "1.15em",
       overflow: "hidden !important",
-      marginTop: "-60px",
-      marginLeft: "-30px",
+      marginLeft: "-30%",
     },
     bmItemList: {
       color: "#b8b7ad",
-      padding: "0.8em",
       textAlign: "center",
     },
     bmItem: {
       display: "block",
       textDecoration: "none",
+      color: "#F5F5F5",
+      marginTop: "20%",
     },
     bmOverlay: {
       background: "none",
@@ -49,12 +63,18 @@ function BurgerMenu() {
   return (
     <div className="buttonContainer">
       <Menu
+        right
         customBurgerIcon={<img src={BurgerBtn} alt="burger menu" />}
         className="my-menu"
         styles={defaultStyle}
       >
         <Link to="/informations">Enregistrer un téléphone</Link>
+
         <Link to="/stockage">Voir les stocks disponibles</Link>
+
+        <Link to="/" onClick={handleLogingLogout}>
+          Déconnexion
+        </Link>
       </Menu>
     </div>
   );
