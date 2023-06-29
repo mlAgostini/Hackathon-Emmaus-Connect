@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { LogingContext } from "../../contexts/LogingContext";
 import "./Navbar.scss";
 import LogoEmmaus from "../../assets/images/logoEmmaus.png";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ function Navbar() {
 
   return (
     <div className="navHeader">
+      <BurgerMenu />
       <img className="logoImg" src={LogoEmmaus} alt="Logo Emmaus" />
       <Link to="/informations">Enregistrer un téléphone</Link>
       <Link to="/stockage">Voir les stocks disponibles</Link>
