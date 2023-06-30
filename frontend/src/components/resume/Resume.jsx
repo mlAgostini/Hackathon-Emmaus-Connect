@@ -1,16 +1,16 @@
-import "./recap.scss";
+import "./Resume.scss";
 import PropTypes from "prop-types";
 
-function Recap(props) {
+function Resume(props) {
   const { mobileName, brand, ram, memory, price, category, other } = props;
   return (
-    <div className="recapContainer">
+    <div className="resumeContainer">
       <h1 className="brand">{brand}</h1>
       <h2 className="model">{mobileName}</h2>
 
-      <div className="recapCategory">
+      <div className="resumeCategory">
         {/* <h3 className="categoryTitle">Category</h3> */}
-        <span>{category}</span>
+        <span className="category">{category}</span>
       </div>
       <div className="circles">
         <div className="recapCondition">{/* <span>{etat}</span> */}</div>
@@ -39,8 +39,9 @@ function Recap(props) {
     </div>
   );
 }
+export default Resume;
 
-Recap.propTypes = {
+Resume.propTypes = {
   mobileName: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   // etat: PropTypes.string.isRequired,
@@ -50,5 +51,3 @@ Recap.propTypes = {
   other: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
 };
-
-export default Recap;
